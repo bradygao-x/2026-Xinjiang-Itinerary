@@ -72,7 +72,7 @@
     .rating-note { margin-top: 7px; color: #4d5853; font-size: 12px; line-height: 1.55; }
     .small { margin-top: 8px; color: var(--muted); font-size: 12px; line-height: 1.6; }
     main { position: relative; min-width: 0; }
-    #map { height: 100vh; width: 100%; background: #dbe2d8; }
+    #map { height: 100vh; width: 100%; background: #dbe2d8; touch-action: pan-x pan-y pinch-zoom; }
     .floating { position: absolute; left: 18px; right: 18px; bottom: 18px; display: grid; grid-template-columns: 1fr auto; gap: 10px; z-index: 10; pointer-events: none; }
     .summary-bar, .map-tools { pointer-events: auto; background: rgba(255,255,255,0.95); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow); }
     .summary-bar { padding: 12px 14px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
@@ -8512,7 +8512,7 @@
       { name: '贾登峪', c: [48.5071, 87.1331], color: '#28715f', level: 'D', note: '阿禾公路后落脚点，喀纳斯入口', kind: '功能住宿' },
       { name: '禾木方向', c: [48.584, 87.425], color: '#2e678f', level: 'A', note: '阿禾公路途经方向，仅作为路线锚点，不住宿', kind: '自驾锚点' }
     ];
-    const map = L.map('map', { center: [45.6, 85.5], zoom: 6, zoomControl: false });
+    const map = L.map('map', { center: [45.6, 85.5], zoom: 6, zoomControl: false, touchZoom: true, scrollWheelZoom: true, doubleClickZoom: true });
     L.control.zoom({ position: 'bottomright' }).addTo(map);
     const gaodeRoad = L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', { subdomains: '1234', maxZoom: 18, attribution: '高德地图' });
     const gaodeSat = L.layerGroup([L.tileLayer('https://webst0{s}.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}', { subdomains: '1234', maxZoom: 18, attribution: '高德地图' }), L.tileLayer('https://webst0{s}.is.autonavi.com/appmaptile?style=8&x={x}&y={y}&z={z}', { subdomains: '1234', maxZoom: 18 })]);
