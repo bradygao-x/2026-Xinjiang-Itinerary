@@ -25,8 +25,8 @@
     }
     html, body { height: 100%; }
     body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: var(--ink); background: var(--bg); overflow: hidden; }
-    .app { min-height: 100vh; min-height: 100dvh; position: relative; }
-    aside { position: absolute; top: 82px; left: 14px; bottom: 16px; width: min(410px, calc(100vw - 28px)); background: rgba(255,255,255,0.94); border: 1px solid var(--line); border-radius: 10px; overflow-y: auto; z-index: 20; box-shadow: var(--shadow); backdrop-filter: blur(14px); scrollbar-width: thin; }
+    .app { min-height: 100vh; min-height: 100dvh; position: relative; display: grid; grid-template-columns: minmax(360px, 440px) 1fr; }
+    aside { position: relative; margin: 82px 0 16px 14px; width: auto; height: calc(100vh - 98px); background: rgba(255,255,255,0.94); border: 1px solid var(--line); border-radius: 10px; overflow-y: auto; z-index: 20; box-shadow: var(--shadow); backdrop-filter: blur(14px); scrollbar-width: thin; }
     .topbar { position: absolute; top: 14px; left: 14px; right: 14px; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 11px 14px; border: 1px solid rgba(217,223,215,0.92); border-radius: 10px; background: rgba(255,255,255,0.94); box-shadow: var(--shadow); backdrop-filter: blur(14px); }
     .topbar-title { min-width: 0; }
     .topbar h1 { margin: 0; font-size: 18px; line-height: 1.25; }
@@ -71,9 +71,9 @@
     .rating-line { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
     .rating-note { margin-top: 7px; color: #4d5853; font-size: 12px; line-height: 1.55; }
     .small { margin-top: 8px; color: var(--muted); font-size: 12px; line-height: 1.6; }
-    main { position: absolute; inset: 0; min-width: 0; }
+    main { position: relative; min-width: 0; }
     #map { height: 100vh; width: 100%; background: #dbe2d8; }
-    .floating { position: absolute; left: 438px; right: 18px; bottom: 18px; display: grid; grid-template-columns: 1fr auto; gap: 10px; z-index: 10; pointer-events: none; }
+    .floating { position: absolute; left: 18px; right: 18px; bottom: 18px; display: grid; grid-template-columns: 1fr auto; gap: 10px; z-index: 10; pointer-events: none; }
     .summary-bar, .map-tools { pointer-events: auto; background: rgba(255,255,255,0.95); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow); }
     .summary-bar { padding: 12px 14px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
     .stat .val { font-size: 18px; font-weight: 800; color: var(--brand-dark); }
@@ -81,7 +81,7 @@
     .map-tools { padding: 8px; display: flex; flex-direction: column; gap: 6px; align-self: end; }
     .tool-btn { border: 1px solid var(--line); background: #fff; border-radius: 7px; min-width: 76px; min-height: 34px; cursor: pointer; color: var(--ink); }
     .tool-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); }
-    .legend { position: absolute; top: 82px; right: 422px; z-index: 10; background: rgba(255,255,255,0.94); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; box-shadow: var(--shadow); font-size: 12px; color: var(--muted); }
+    .legend { position: absolute; top: 82px; right: 16px; z-index: 10; background: rgba(255,255,255,0.94); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; box-shadow: var(--shadow); font-size: 12px; color: var(--muted); }
     .legend-row { display: flex; align-items: center; gap: 8px; margin: 5px 0; }
     .line-sample { width: 26px; height: 4px; border-radius: 4px; background: var(--brand); }
     .line-sample.alt { background: var(--blue); border-top: 2px dashed #fff; }
@@ -90,7 +90,7 @@
     .route-km-label { background: transparent; border: 0; box-shadow: none; }
     .route-km-label span { display: inline-block; padding: 4px 8px; border-radius: 999px; background: rgba(184, 92, 56, 0.92); color: #fff; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
     .route-km-label.alt span { background: rgba(46,103,143,0.92); }
-    .route-status { position: absolute; left: 438px; top: 82px; z-index: 11; max-width: min(420px, calc(100vw - 690px)); padding: 8px 11px; border-radius: 8px; border: 1px solid var(--line); background: rgba(255,255,255,0.94); box-shadow: var(--shadow); color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .route-status { position: absolute; left: 18px; top: 82px; z-index: 11; max-width: min(420px, calc(100vw - 690px)); padding: 8px 11px; border-radius: 8px; border: 1px solid var(--line); background: rgba(255,255,255,0.94); box-shadow: var(--shadow); color: var(--muted); font-size: 12px; line-height: 1.45; }
     .route-status.ok { color: var(--green); }
     .route-status.warn { color: var(--amber); }
     .route-status.fail { color: var(--red); }
