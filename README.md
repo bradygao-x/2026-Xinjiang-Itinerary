@@ -1,1 +1,1 @@
-# 2026-Xinjiang-Intinary
+# 2026-Xinjiang-Itinerary
