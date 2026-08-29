@@ -1,0 +1,1 @@
+# 2026-Xinjiang-Intinary
